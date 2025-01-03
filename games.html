@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Games</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			// Function to launch the game and display its container
+			function launchGame(gameId) {
+				// Stop audio for any currently open game
+				const audioElements = document.querySelectorAll('audio');
+				audioElements.forEach(audio => {
+					audio.pause();
+					audio.currentTime = 0;  // Reset audio to start
+				});
+
+				// Show the selected game container
+				document.getElementById(gameId).style.display = 'block';
+
+				// Play the audio for the selected game
+				const gameAudio = document.getElementById('audio' + gameId.charAt(gameId.length - 1));
+				if (gameAudio) {
+					gameAudio.play();
+				}
+			}
+
+			// Function to hide the game container
+			function hideGame(gameId) {
+				// Stop the audio when the game is closed
+				const gameAudio = document.getElementById('audio' + gameId.charAt(gameId.length - 1));
+				if (gameAudio) {
+					gameAudio.pause();
+					gameAudio.currentTime = 0;  // Reset the audio
+				}
+
+				// Hide the game container
+				document.getElementById(gameId).style.display = 'none';
+			}
+
+		</script>
+	</head>
+
+	<style>
+        /* Image Grid Styling */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-item {
+            position: relative;
+            width: 100%;
+        }
+
+        .tape-image {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .tape-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Popup Box (Modal) Styling */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #tape-info {
+            margin-top: 20px;
+        }
+
+        /* Menu Styling */
+        #menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        #menu ul li {
+            padding: 5px 0;
+        }
+	</style>`
+
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">LFCTP</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="cassettes.html">Cassettes</a></li>
+							<li><a href="vhs.html">VHS</a></li>
+							<li><a href="games.html">Games</a></li>
+							<li><a href="misc.html">Other Art</a></li>
+							<li><a href="about.html">About and Contact</a></li>
+							<li><a href="merch.html">Merch</a></li>
+							<li><a href="radio.html">Browser Radio</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Games Page</h1>
+							<p>Welcome to the Games page! Below, you'll find a selection of our games that can be played directly in your browser. Simply click on a game to launch it. In addition, we offer physical game cartridges for purchase, which are fully compatible with real hardware! Scroll further down to view the entire game catalog.</p>
+
+							<!-- Game Development Section -->
+							<div id="game-development" class="category-content" style="display: block;">
+
+							<!-- Display the controls -->
+							<div class="controls">
+								<ul style="list-style-type: none; padding: 0; margin: 0;">
+									<li style="text-align: center;">
+										<h4>Controls:</h4>
+										<img src="images/controls.png" alt="Controller Mapping" style="max-width: 100%; height: auto;">
+									</li>
+								</ul>
+							</div>
+
+
+							<!-- Game Images (Clickable to Launch in New Tab) -->
+							<h4>Play in Your Browser</h4>
+							<p>Click on a game below to launch it in a new tab.</p>
+							<div style="text-align: center;">
+								<a href="game/index.html" target="_blank">
+									<img src="images/game.png" alt="Game 1" style="max-width: 300px; cursor: pointer; margin: 10px;">
+								</a>
+								<a href="game2/index.html" target="_blank">
+									<img src="images/game2.png" alt="Game 2" style="max-width: 300px; cursor: pointer; margin: 10px;">
+								</a>
+								<a href="game3/index.html" target="_blank">
+									<img src="images/game3.png" alt="Game 3" style="max-width: 300px; cursor: pointer; margin: 10px;">
+								</a>
+							</div>
+
+
+							</div>
+							<div class="game-catalog">
+								<h4>Browse Full Game Catalog</h4>
+								<p>Click on any of the games below to learn more.</p>
+							
+								<!-- Image Grid -->
+								<div class="image-grid">
+									<div class="image-item">
+										<img src="images/game.png" alt="Game 1" class="tape-image" data-tape="1" />
+									</div>
+									<div class="image-item">
+										<img src="images/game2.png" alt="Game 2" class="tape-image" data-tape="2" />
+									</div>
+									<div class="image-item">
+										<img src="images/game3.png" alt="Game 3" class="tape-image" data-tape="3" />
+									</div>
+									<div class="image-item">
+										<img src="images/game4.png" alt="Game 4" class="tape-image" data-tape="4" />
+									</div>
+									<div class="image-item">
+										<img src="images/game5.gif" alt="Game 5" class="tape-image" data-tape="5" />
+									</div>
+									<div class="image-item">
+										<img src="images/game6.png" alt="Game 6" class="tape-image" data-tape="6" />
+									</div>
+									<div class="image-item">
+										<img src="images/game7.png" alt="Game 7" class="tape-image" data-tape="7" />
+									</div>
+									<div class="image-item">
+										<img src="images/game8.png" alt="Game 8" class="tape-image" data-tape="8" />
+									</div>
+									<div class="image-item">
+										<img src="images/game9.gif" alt="Game 9" class="tape-image" data-tape="9" />
+									</div>
+									<div class="image-item">
+										<img src="images/game10.png" alt="Game 10" class="tape-image" data-tape="10" />
+									</div>
+								</div> <!-- End of image grid -->
+							</div> <!-- End of game catalog section -->
+
+						</div>
+
+					</div>
+
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.instagram.com/cassettetapeperplexity/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="mailto:lofiperplexity@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								<li><a href="https://www.youtube.com/@cassettetapeperplexity" class="icon brands style2 fa-youtube"><span class="label">YouTube</span></a></li>
+								<li><a href="https://open.spotify.com/artist/3RGCjdaGrijo3K8CmSciuc" class="icon brands style2 fa-spotify"><span class="label">Spotify</span></a></li>
+								<li><a href="https://soundcloud.app.goo.gl/Km7HwUBzSwa1BYfw5" class="icon brands style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+								<li><a href="https://music.apple.com/us/artist/lo-fidelity-cassette-tape-perplexity-and-the-boys/1554085689" class="icon brands style2 fa-apple"><span class="label">Apple Music</span></a></li>
+								<li><a href="https://lofidelitycassettetapeperplexityandtheboys.bandcamp.com/" class="icon brands style2 fa-bandcamp"><span class="label">Bandcamp</span></a></li>
+								<li><a href="https://lofiperplexity.itch.io/" class="icon brands style2 fa-itch-io"><span class="label">Itch.io</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; Lo Fidelity Cassette Tape Perplexity and the Boys</li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Popup Box for Tape Information -->
+		<div id="tape-modal" class="modal">
+			<div class="modal-content">
+				<span class="close-btn">&times;</span>
+				<h2>Game Information</h2>
+				<div id="tape-info">
+					<!-- Tape info will be dynamically populated here -->
+				</div>
+			</div>
+		</div>
+
+		
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				const tapeData = {
+					1: {
+						title: "Island Adventures ~ Thrift Store Boy 2",
+						info: "Embark on an exhilarating gaming experience with Island Adventures - Thrift Store Boy 2, the latest installment by LFTP that elevates the thrills of its predecessors. Immerse yourself in a vast open world that seamlessly merges the worlds of the previous three games, each enhanced to deliver a truly immersive gaming experience. Venture into the captivating landscape of Thrift Store Island, where a treasure trove of upgraded items awaits exploration. Sail across the virtual seas to Beaumont Island, boasting an enhanced museum of Gameboy art adorned with all-new masterpieces.  A soothing lofi radio also awaits you. Prepare for a dynamic gaming adventure with the introduction of new mini-games and engaging combat challenges. Whether you're a seasoned gamer or a newcomer to the series, Island Adventures - Thrift Store Boy 2 promises an unparalleled blend of exploration, creativity, and excitement in one colossal open world. "
+					},
+
+
+					2: {
+						title: "Lofi Radio ~ Perplexing Beats to Chill/Study to",
+						info: "Indulge in a unique gaming experience with this point-and-click game. It's an interactive lo-fi radio on a GB rom. The game features a virtual radio that cycles through eight songs, but you can also manually change the tune as per your preference. Further, you can interact with the artwork by clicking on it to change the background, or choose to read books or play with the fish to unwind. This game is perfect to run on your emulator or original hardware, and will provide a perfect background as you chill or study."
+					},
+
+					3: {
+						title: "Museum of Gameboy Art",
+						info: "Embark on an exciting adventure as a tourist who has just arrived on Beaumont Island, the home of the Museum of Gameboy Art and a vibrant community of villagers. The museum is a treasure trove of art captured on the Gameboy camera and offers platform levels with art-burglar enemies. Besides exploring the museum, the game also offers a range of side quests that can be accessed through the to-do list by clicking the start button. These side quests include playing an N64 spin-off game in a villager's house, logging in to a virtual Windows 95 machine, and reading books. Immerse yourself in the island's unique culture and interact with the friendly locals as you explore and complete the side quests. Have fun exploring Beaumont Island and all it has to offer!"
+					},
+
+					4: {
+						title: "Thrift Store Boy",
+						info: "Earn coins by selling mushrooms and potions, then splurge at the thrift store to decorate your house and unlock thrilling mini games. With a convenient save-game feature, you can seamlessly pick up where you left off. Immerse yourself in the enchanting island, inhabited by diverse villagers who engage in captivating conversations. Discover hidden gems as you explore and delight in interacting with the villagers and indulging in the plethora of side games this extraordinary adventure has to offer. Enjoy an unforgettable experience!"
+					},
+
+					5: {
+						title: "Sleepy Time GBA",
+						info: "Introducing Sleepy Time GBA, a lofi radio video starring the beloved Sleepy Time Bear, now available as a Gameboy Advance ROM! Settle in as the Sleepy Time Bear cozies up by a crackling fireplace, accompanied by peaceful music from LFCTP. Hold A to fast forward (but remember not to fast forward for too long on the original hardware) and click B to start over. "
+					},
+
+					6: {
+						title: "Lofi Radio GBA",
+						info: "Unwind and relax to the soothing beats of this Lofi radio on GBA - perfect for chilling or studying. Enjoy over 20 minutes of calming lofi music by Lo Fidelity Cassette Tape Perplexity and the Boys, while watching a loop of a perplexed boy studying at a desk. The video will automatically restart when finished, and you can hold A to fast forward (but be careful not to fast forward for too long on the original hardware, as it may crash the game). You can also click B to start over. Cartridges of the game are available."
+					},
+
+					7: {
+						title: "Shadow ~ A Parable GBA",
+						info: "Shadow ~ A Parable presents a unique fusion of literature and gaming, offering an auditory journey through Edgar Allan Poe's haunting tale, Shadow. Delve into the depths of Poe's narrative accompanied by evocative background music from Lo Fidelity Cassette Tape Perplexity and the Boys. Immerse yourself further with a visual feast of illustrations sourced from vintage Poe publications and other captivating images, enhancing the storytelling experience. Navigate through these visuals with ease, utilizing the GBA's L or R buttons to scroll through the pictures at your leisure. Prepare to be transported into the eerie world of Poe like never before in this innovative audiobook adventure."
+					},
+
+					8: {
+						title: "A Mad Tea Party GBA",
+						info: "Experience Chapter 7 of Alice's Adventures in Wonderland in a unique format: an audio book on a GBA rom! Listen to a captivating reading of the chapter, complete with engaging sound effects and background music by Lo Fidelity Cassette Tape Perplexity and the Boys. As you listen, you can also immerse yourself in the original illustrations from the classic book. Use the L or R buttons to scroll through the pictures and enhance your listening experience"
+					},
+
+					9: {
+   					 title: "GBA Groove",
+					info: "Dive into nostalgia with GBA Groove: LoFi Lullabies, our exclusive GBA video. Experience soothing lofi music accompanied by charming visuals of a sleeping cat, a rain-splattered window, and a mesmerizing lava lamp. Whether you're unwinding on your GameBoy or reliving the magic of retro gaming on an emulator, this ROM is your ticket to a tranquil journey wherever you go. Download now and let the chill vibes wash over you! Hold A to fast forward (but remember not to fast forward for too long on the original hardware) and click B to start over."
+					},
+
+				10: {
+					title: "Legend of Lofi GBA",
+					info: "Immerse yourself in a unique audio-visual experience with this GBA video featuring Legend of Lofi music by Lo Fidelity Cassette Tape Perplexity and the Boys, accompanied by gameplay visuals from OOT and MM. You can easily watch and listen to this GBA rom on most GBA emulators or even on the original hardware. You can hold A to fast forward (but do not fast forward for too long on the original hardware) and click B to start over."
+					}
+
+
+
+				};
+			
+				// Open popup with tape details
+				document.querySelectorAll('.tape-image').forEach((image) => {
+					image.addEventListener('click', function() {
+						const tapeId = this.getAttribute('data-tape');
+						const tape = tapeData[tapeId];
+			
+						const modal = document.getElementById('tape-modal');
+						const tapeInfo = document.getElementById('tape-info');
+						tapeInfo.innerHTML = `
+							<h3>${tape.title}</h3>
+							<p>${tape.info}</p>
+						`;
+						modal.style.display = "block";
+					});
+				});
+			
+				// Close popup
+				document.querySelector('.close-btn').addEventListener('click', function() {
+					document.getElementById('tape-modal').style.display = "none";
+				});
+			
+				// Close modal if clicked outside the modal content
+				window.addEventListener('click', function(event) {
+					if (event.target === document.getElementById('tape-modal')) {
+						document.getElementById('tape-modal').style.display = "none";
+					}
+				});
+			</script>
+
+	</body>
+</html>
+
