@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Cassettes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<style>
+        /* Image Grid Styling */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-item {
+            position: relative;
+            width: 100%;
+        }
+
+        .tape-image {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .tape-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Popup Box (Modal) Styling */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #tape-info {
+            margin-top: 20px;
+        }
+
+        /* Menu Styling */
+        #menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        #menu ul li {
+            padding: 5px 0;
+        }
+    </style>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">LFCTP</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="games.html">Games</a></li>
+							<li><a href="merch.html">Merch</a></li>
+							<li><a href="vhs.html">VHS</a></li>
+							<li><a href="cassettes.html">Cassettes</a></li>
+							<li><a href="radio.html">Browser Radio</a></li>
+							<li><a href="about.html">About and Contact</a></li>
+						</ul>
+					</nav>
+
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+						<h1>Cassette Tape Catalog</h1>
+						<p>Click on any of the tapes below to learn more and listen to a sample.</p>
+			
+						<!-- Image Grid -->
+						<div class="image-grid">
+							<div class="image-item">
+								<img src="images/tape1.jpg" alt="Tape 1" class="tape-image" data-tape="1" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape2.jpg" alt="Tape 2" class="tape-image" data-tape="2" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape3.jpg" alt="Tape 3" class="tape-image" data-tape="3" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape4.jpg" alt="Tape 4" class="tape-image" data-tape="4" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape5.jpg" alt="Tape 5" class="tape-image" data-tape="5" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape6.jpg" alt="Tape 6" class="tape-image" data-tape="6" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape7.jpg" alt="Tape 7" class="tape-image" data-tape="7" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape8.jpg" alt="Tape 8" class="tape-image" data-tape="8" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape9.jpg" alt="Tape 9" class="tape-image" data-tape="9" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape10.jpg" alt="Tape 10" class="tape-image" data-tape="10" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape11.jpg" alt="Tape 11" class="tape-image" data-tape="11" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape12.jpg" alt="Tape 12" class="tape-image" data-tape="12" />
+							</div>
+							<div class="image-item">
+								<img src="images/tape13.jpg" alt="Tape 13" class="tape-image" data-tape="13" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.instagram.com/cassettetapeperplexity/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="mailto:lofiperplexity@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								<li><a href="https://www.youtube.com/@cassettetapeperplexity" class="icon brands style2 fa-youtube"><span class="label">YouTube</span></a></li>
+								<li><a href="https://open.spotify.com/artist/3RGCjdaGrijo3K8CmSciuc" class="icon brands style2 fa-spotify"><span class="label">Spotify</span></a></li>
+								<li><a href="https://soundcloud.app.goo.gl/Km7HwUBzSwa1BYfw5" class="icon brands style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+								<li><a href="https://music.apple.com/us/artist/lo-fidelity-cassette-tape-perplexity-and-the-boys/1554085689" class="icon brands style2 fa-apple"><span class="label">Apple Music</span></a></li>
+								<li><a href="https://lofidelitycassettetapeperplexityandtheboys.bandcamp.com/" class="icon brands style2 fa-bandcamp"><span class="label">Bandcamp</span></a></li>
+								<li><a href="https://lofiperplexity.itch.io/" class="icon brands style2 fa-itch-io"><span class="label">Itch.io</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; Lo Fidelity Cassette Tape Perplexity and the Boys</li>
+						</ul>
+					</div>
+				</footer>
+				
+			</div>
+
+		<!-- Popup Box for Tape Information -->
+		<div id="tape-modal" class="modal">
+			<div class="modal-content">
+				<span class="close-btn">&times;</span>
+				<h2>Tape Information</h2>
+				<div id="tape-info">
+					<!-- Tape info will be dynamically populated here -->
+				</div>
+			</div>
+		</div>
+			
+
+		<script>
+			const tapeData = {
+				1: {
+					title: "Legend of Lofi",
+					songs: [
+						"Press Start",
+						"Lofi Healing",
+						"Lofi Town",
+						"Lofi Observatory",
+						"Indoors with the Boys",
+						"Drinkin' Milk with the Boys",
+						"Lofi Shop",
+						"Lofi Owl",
+						"Zora's Lofi",
+						"Saria's Lofi (Lofi Woods)",
+						"Great Lofi Fountain",
+						"Lofi Market",
+						"Zelda's Lo-fi-aby",
+						"Lofi Village",
+						"Lofi Storm",
+						"Lofi Ranch",
+						"Temple of Lofi",
+						"Sheik's Lofi",
+						"Prelude of Lofi"
+					],
+					info: "This popular tape features songs inspired by Ocarina of Time and Majora's Mask. The tracks were created from the ground up, blending nostalgic melodies with a lofi twist.",
+					audioFile: "music/tape1.mp3"
+				},
+				2: {
+					title: "Ease Your Perplexity with the Boys",
+					songs: [
+						"Instructions",
+						"Lesson 1 (Sounds of the Forest)",
+						"Lesson 2 (Sounds of the City)",
+						"Lesson 3 (Sounds of the Ocean)",
+						"Lesson 4 (Sounds of Space)",
+						"Closing Remarks"
+					],
+					info: "In this guided meditation tape, you'll embark on a journey through various peaceful environments, from the calming sounds of a forest to the soothing waves of the ocean and even the serene vastness of outer space. Each exercise will transport you to a new, magical place designed to relax and inspire.",
+					audioFile: "music/tape2.mp3"
+				},
+				3: {
+					title: "Casio Clearwater Revival",
+					songs: [
+						"Down on the Corner",
+						"Fortunate Son",
+						"Jam 1",
+						"Susie Q",
+						"Objects",
+						"Lookin' Out My Back Door",
+						"Jam 2",
+						"Midnight Special"
+					],
+					info: "This is the first tape by LFCTP, recorded directly to tape using a thrift store tape recorder and a cheap thrift store Casio keyboard. It features cover songs you’ll recognize, along with some raw jam sessions. Expect a lo-fi sound with all the tape hiss, scratchy vibes, and low-quality recordings that make it uniquely authentic.",
+					audioFile: "music/tape3.mp3"
+				},
+				4: {
+					title: "Particular Needs of People Over 60",
+					songs: [
+						"Tai Chi Intro",
+						"Buy Track",
+						"Tai Chi with the Seniors",
+						"Yue Xia Du Zhuo",
+						"Ba Shang Qiu Ju",
+						"Down by the River",
+						"Live at Far Out Fest (Tape Recording)"
+					],
+					info: "This is a Tai Chi tape designed to guide you through calming exercises, with instructions accompanied by soothing background music. You will also hear ancient Chinese poems woven into the soundscape, helping to heal both your body and mind.",
+					audioFile: "music/tape4.mp3"
+				},
+				5: {
+					title: "Take a Perplexing Walk with the Boys",
+					songs: [
+						"Walkin' Instructions",
+						"Stretchin' with the Boys",
+						"Out the Door",
+						"Walkin' Lesson One",
+						"Walkin' Lesson Two",
+						"Walkin' with the Music",
+						"Walkin' in the City",
+						"Keep Goin'",
+						"Cool Down",
+						"Left Foot Right Foot",
+						"Finish Line"
+					],
+					info: "Inspired by the 1980s walking tapes, this tape is designed to motivate and guide you through a power walk. With instructions on how to walk safely and effectively, it’s the perfect companion for your workout. Pop it in your Walkman, strap on your walking sandals, and get moving!",
+					audioFile: "music/tape5.mp3"
+				},
+				6: {
+					title: "Surfin' Perplexing Sound Waves with the Boys",
+					songs: [
+						"Surfin' with the Boys Pt. 1",
+						"Surfin' with the Boys Pt. 2",
+						"Day Off at the Beach",
+						"Surfin' with Joplin",
+						"Storm",
+						"Mermaids"
+					],
+					info: "This surf rock tape delivers everything you expect from the genre: reverb-drenched guitars, mermaid harmonies, drum solos, and underwater vibes. Pop it into your cassette player and let the tropical beach vibes take over!",
+					audioFile: "music/tape6.mp3"
+				},
+				7: {
+					title: "Tea Time Tape: Song: A Mad Tea Party",
+					songs: [
+						"A Mad Tea Party"
+					],
+					info: "This is a book-on-tape experience featuring Chapter 7 of Alice in Wonderland – The Mad Tea Party. With background music setting the tone, you’ll be guided through the whimsical adventure, bringing the story to life in a unique and immersive way.",
+					audioFile: "music/tape7.mp3"
+				},
+				8: {
+					title: "Nosferatu and the Boys",
+					songs: [
+						"Act I & II",
+						"Act III",
+						"Act IV & V",
+						"Act VI & VII",
+						"Act VIII, IX, & X",
+						"Act XI Part I",
+						"Act XI Part II",
+						"Act XII",
+						"Act XIII",
+						"Act XIV",
+						"Act XV",
+						"Act XVI"
+					],
+					info: "This eerie, atmospheric tape is designed to perfectly accompany the silent film Nosferatu. Now, the silent horror film gets the soundtrack it deserves! Play this tape along with the movie to enhance your experience... if you dare. We’ve also created a VHS version of the movie with this audio built in.",
+					audioFile: "music/tape8.mp3"
+				},
+				9: {
+					title: "Lofi Language Lessons",
+					songs: [
+						"Alphabet",
+						"Animals",
+						"Numbers",
+						"Clouds",
+						"Vocab Part 1",
+						"Vocab Part 2 & 3",
+						"Petite Mendiante"
+					],
+					info: "This is a French language learning tape with relaxing lofi background music. Learn the language the chill way with Lofi Language Lessons, guided by the boys. Perfect for unwinding while picking up a new skill!",
+					audioFile: "music/tape9.mp3"
+				},
+				10: {
+					title: "Perplexing Poe Poems",
+					songs: [
+						"Preface",
+						"Shadow",
+						"A Dream",
+						"Spirits of the Dead",
+						"A Dream Within a Dream"
+					],
+					info: "This is a book-on-tape featuring the haunting poems and parables of Edgar Allan Poe. Immerse yourself in the dark, eerie atmosphere with spooky background music that enhances the chilling tales and stirs your imagination.",
+					audioFile: "music/tape10.mp3"
+				},
+				11: {
+					title: "Lo Fidelity Cassette Tape Perplexity and the Boys",
+					songs: [
+						"Clouds",
+						"Les Forgeron (Remasterisé)",
+						"Rose",
+						"Lofideleotry (Remasterisé)",
+						"A La Brise (Remasterisé)",
+						"Vendanges (Remasterisé)",
+						"Tip of the Nose",
+						"Grace",
+						"Deuxième Partie de Rose",
+						"Petite Mendiante"
+					],
+					info: "This is the remastered version of LFCTP's second tape, Lo Fidelity Cassette Tape Perplexity and the Boys. It’s a mixed collection of tracks, often featuring a rainy, lo-fi vibe that creates a relaxed and nostalgic atmosphere.",
+					audioFile: "music/tape11.mp3"
+				},
+				12: {
+					title: "Perplexing Dreams ~ A Sleep Tape",
+					songs: [
+						"The Contents of This Tape",
+						"Opening Remarks",
+						"Dream Journal",
+						"Sheep",
+						"Sweet Dreams"
+					],
+					info: "This tape is designed to guide you into a peaceful sleep and help you navigate the mysterious dream world. Drift off to relaxing lullabies and sheep counting, then practice your lucid dreaming skills as you explore the dreamscape with this calming sleep tape.",
+					audioFile: "music/tape12.mp3"
+				},
+				13: {
+					title: "enregistrer au magn​é​tophone",
+					songs: [
+						"un harmonium de la friperie",
+						"lore et l'amour",
+						"la ronde de l'ouvrier",
+						"l'innocence à paris",
+						"un entracte rapide",
+						"syrie",
+						"le chevalier qui n'est pas mort",
+						"petite mendiante"
+					],
+					info: "This tape features indie-style music recorded with a raw, cassette charm. With French vocals, nylon guitars, and harmonium melodies, it captures the nostalgic, scratchy warmth of old tape recordings.",
+					audioFile: "music/tape13.mp3"
+				}
+			};
+		
+			// Open popup with tape details
+			document.querySelectorAll('.tape-image').forEach((image) => {
+				image.addEventListener('click', function() {
+					const tapeId = this.getAttribute('data-tape');
+					const tape = tapeData[tapeId];
+		
+					const modal = document.getElementById('tape-modal');
+					const tapeInfo = document.getElementById('tape-info');
+					tapeInfo.innerHTML = `
+						<h3>${tape.title}</h3>
+						<p><strong>Songs:</strong> ${tape.songs.join(', ')}</p>
+						<p>${tape.info}</p>
+						<audio controls>
+							<source src="${tape.audioFile}" type="audio/mp3">
+							Your browser does not support the audio element.
+						</audio>
+					`;
+					modal.style.display = "block";
+				});
+			});
+		
+			// Close popup
+			document.querySelector('.close-btn').addEventListener('click', function() {
+				document.getElementById('tape-modal').style.display = "none";
+			});
+		
+			// Close modal if clicked outside the modal content
+			window.addEventListener('click', function(event) {
+				if (event.target === document.getElementById('tape-modal')) {
+					document.getElementById('tape-modal').style.display = "none";
+				}
+			});
+		</script>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		
+		
+
+
+	</body>
+</html>
+
