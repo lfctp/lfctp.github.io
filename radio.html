@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Radio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      .radio-container {
+        background-color: #3e3e3e;
+        width: 300px;
+        height: 200px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        margin-top: 30px;
+        /* Center the radio container horizontally */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .radio-screen {
+        background-color: #222;
+        width: 80%;
+        height: 50px;
+        margin: 20px 0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
+
+      .radio-button {
+        background-color: #555;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .radio-button:hover {
+        background-color: #777;
+      }
+
+      .radio-button:active {
+        transform: scale(0.9);
+      }
+
+      #play-button {
+        background-color: #4caf50; /* Green color for play button */
+      }
+
+      #pause-button {
+        background-color: #f44336; /* Red color for pause button */
+      }
+
+      .button-label {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* Style for the GIF animation */
+      .gif-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      /* Full-screen overlay style */
+      .fullscreen-overlay {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .fullscreen-overlay img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Maintain the aspect ratio while filling the screen */
+      }
+    </style>
+  </head>
+
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">LFCTP</span>
+          </a>
+
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cassettes.html">Cassettes</a></li>
+          <li><a href="vhs.html">VHS</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="about.html">About and Contact</a></li>
+          <li><a href="merch.html">Merch</a></li>
+          <li><a href="radio.html">Browser Radio</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Content with GIF and Music -->
+      <div id="main-content">
+
+        <div class="inner">
+          <h1>Browser Radio</h1>
+          <p>Welcome to the radio page! We will occasionally update the background animation and the music. Click the image to view it in fullscreen.</p>
+        </div>
+
+        <!-- Radio Controls (Play and Pause) -->
+        <div class="radio-container">
+          <div class="radio-screen">
+            <span>LFCTP Radio</span>
+          </div>
+
+          <!-- Button Container for Play and Pause -->
+          <div class="button-container">
+            <div id="play-button" class="radio-button">
+              <span class="button-label">▶</span> <!-- Play Button -->
+            </div>
+            <div id="pause-button" class="radio-button" disabled>
+              <span class="button-label">⏸</span> <!-- Pause Button -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="background-music" autoplay loop>
+          <source src="music/song1.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+
+        <br><br>
+
+        <!-- Display GIF -->
+        <div class="gif-container">
+          <img src="images/animation1.gif" alt="GIF Animation" id="gif-animation" />
+        </div>
+
+      </div>
+
+      <!-- Fullscreen GIF Overlay -->
+      <div id="fullscreen-overlay" class="fullscreen-overlay">
+        <img src="images/animation1.gif" alt="Fullscreen GIF" id="fullscreen-gif" />
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+              <li><a href="https://www.instagram.com/cassettetapeperplexity/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="mailto:lofiperplexity@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+              <li><a href="https://www.youtube.com/@cassettetapeperplexity" class="icon brands style2 fa-youtube"><span class="label">YouTube</span></a></li>
+              <li><a href="https://open.spotify.com/artist/3RGCjdaGrijo3K8CmSciuc" class="icon brands style2 fa-spotify"><span class="label">Spotify</span></a></li>
+              <li><a href="https://soundcloud.app.goo.gl/Km7HwUBzSwa1BYfw5" class="icon brands style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+              <li><a href="https://music.apple.com/us/artist/lo-fidelity-cassette-tape-perplexity-and-the-boys/1554085689" class="icon brands style2 fa-apple"><span class="label">Apple Music</span></a></li>
+              <li><a href="https://lofidelitycassettetapeperplexityandtheboys.bandcamp.com/" class="icon brands style2 fa-bandcamp"><span class="label">Bandcamp</span></a></li>
+              <li><a href="https://lofiperplexity.itch.io/" class="icon brands style2 fa-itch-io"><span class="label">Itch.io</span></a></li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>&copy; Lo Fidelity Cassette Tape Perplexity and the Boys</li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      const audio = document.getElementById('background-music');
+      const playButton = document.getElementById('play-button');
+      const pauseButton = document.getElementById('pause-button');
+      const gifImage = document.getElementById('gif-animation');
+      const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+      const fullscreenGif = document.getElementById('fullscreen-gif');
+
+      // Attempt to autoplay when the page loads
+      window.onload = () => {
+        audio.play().then(() => {
+          playButton.style.pointerEvents = "none"; // Disable play button
+          pauseButton.disabled = false; // Enable pause button
+        }).catch(error => {
+          playButton.style.pointerEvents = "auto"; // Enable play button
+          pauseButton.disabled = true; // Disable pause button
+          console.log("Autoplay failed:", error);
+        });
+      };
+
+      // Play Button functionality
+      playButton.onclick = () => {
+        audio.play();
+        playButton.style.pointerEvents = "none"; // Disable play button
+        pauseButton.disabled = false; // Enable pause button
+      };
+
+      // Pause Button functionality
+      pauseButton.onclick = () => {
+        audio.pause();
+        playButton.style.pointerEvents = "auto"; // Enable play button
+        pauseButton.disabled = true; // Disable pause button
+      };
+
+      // Open Fullscreen GIF
+      gifImage.onclick = () => {
+        fullscreenOverlay.style.display = 'flex';
+      };
+
+      // Close Fullscreen GIF
+      fullscreenOverlay.onclick = () => {
+        fullscreenOverlay.style.display = 'none';
+      };
+    </script>
+  </body>
+</html>
+
