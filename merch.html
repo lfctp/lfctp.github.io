@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Merch</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      .pp-U8L7JFSRBSFUA {
+        text-align: center;
+        border: none;
+        border-radius: 0.25rem;
+        min-width: 11.625rem;
+        padding: 0 2rem;
+        height: 2.625rem;
+        font-weight: bold;
+        background-color: #FFD140;
+        color: #000000;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        cursor: pointer;
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+      }
+
+      .form-section {
+        margin-bottom: 2rem; /* Space between sections */
+      }
+
+      .paypal-logo {
+        height: 0.875rem;
+        vertical-align: middle;
+      }
+
+      .button-description {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Make sure it stays above all content */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        padding-top: 60px;
+        box-sizing: border-box; /* Prevents modal content from affecting layout */
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 10px;
+        box-sizing: border-box; /* Ensure padding and borders don't affect width */
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Make images clickable */
+      .merch-item {
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .donation-image {
+        cursor: pointer;
+        width: 200px; /* Set the image size */
+        margin-bottom: 20px;
+      }
+
+      /* Grid Layout for Images */
+      .merch-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust to create responsive grid */
+        gap: 20px; /* Space between items */
+      }
+
+      .merch-item img, .donation-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover; /* Keep image aspect ratio */
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <header id="header">
+        <div class="inner">
+          <a href="index.html" class="logo">
+            <span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">LFCTP</span>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="merch.html">Merch</a></li>
+          <li><a href="vhs.html">VHS</a></li>
+          <li><a href="cassettes.html">Cassettes</a></li>
+          <li><a href="radio.html">Browser Radio</a></li>
+          <li><a href="about.html">About and Contact</a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <div class="inner">
+          <h1>Merchandise</h1>
+          <p>Below, you'll find our current stock of merchandise. Simply click on an image to purchase. Transactions are powered by PayPal.</p>
+
+          <div class="form-container">
+            <!-- Merchandise Grid -->
+            <div class="merch-items">
+              <!-- Donation Image in the Grid -->
+              <div class="merch-item">
+                <img src="images/donate_image.jpg" alt="Donate" class="donation-image" onclick="openModal('donationModal')">
+                <p>Support Us with a Donation</p>
+              </div>
+
+              <!-- GameBoy Cartridge Image -->
+              <div class="merch-item">
+                <img src="images/gameboy_cartridge.jpg" alt="GameBoy Cartridge" onclick="openModal('gameboyModal')">
+                <p>Island Adventures GameBoy Cartridge</p>
+              </div>
+
+              <!-- Image GBA Video -->
+              <div class="merch-item">
+                <img src="images/gbavid.jpg" alt="GameBoy AVID" onclick="openModal('gbavidModal')">
+                <p>Make Your Own Custom GBA Video </p>
+              </div>
+
+              <!-- TI-84 Calculator with GB Game Installed -->
+              <div class="merch-item">
+                <img src="images/tigameboy.jpg" alt="TI-84 Calculator with GB Game" onclick="openModal('ti84Modal')">
+                <p>TI-84 Calculator with GB Game Installed</p>
+              </div>
+
+              <!--  TI-89 Calculator -->
+              <div class="merch-item">
+                <img src="images/ti89.jpg" alt="TI-89 Calculator" onclick="openModal('ti89Modal')">
+                <p>TI-89 Calculator with GB Game Installed</p>
+              </div>
+
+              <!-- Clay Figure -->
+              <div class="merch-item">
+                <img src="images/clay.jpg" alt="Clay Figure" onclick="openModal('clayModal')">
+                <p>Handmade Clay Figure</p>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Donation -->
+      <div id="donationModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('donationModal')">&times;</span>
+          <h2>Support Us with a Donation</h2>
+          <p>Your donations are greatly appreciated and will directly support our ongoing art projects</p>
+          <form action="https://www.paypal.com/ncp/payment/HTV9CRUWFCVKU" method="post" target="_top">
+            <input class="pp-button" type="submit" value="Donate" />
+            <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+            <section>Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" class="paypal-logo" /></section>
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal for GameBoy Cartridge -->
+      <div id="gameboyModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('gameboyModal')">&times;</span>
+          <h2>Purchase Island Adventures Cartridge</h2>
+          <p>Island Adventures (Thrift Store Boy 2) on a GameBoy cartridge – fully playable on original hardware!</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="D7DZ25SSQPEPC" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" style="width: 250px; height: auto;" />
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal for GBA Video -->
+      <div id="gbavidModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('gbavidModal')">&times;</span>
+          <h2>Make Your Own GBA Video!</h2>
+          <p>Email us your video (preferably under 20 minutes), and we'll load it onto a GameBoy Advance cartridge, allowing you to watch it on real GBA hardware! If you only have music and no video, we can create custom background visuals or even turn your photos into a personalized slideshow. Everything is fully customizable to fit your needs.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="NF99N2XVXXPQW" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" style="width: 250px; height: auto;" />
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal for TI-84 Calculator -->
+      <div id="ti84Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('ti84Modal')">&times;</span>
+          <h2>Purchase TI-84 Calculator with GB Game Installed</h2>
+          <p>This TI-84 calculator has been custom-modified to play GameBoy games, so you can enjoy both math and gaming on the go! The gameplay is functional, though it may not be as clear or smooth as on more powerful devices, and there's no option to save your progress. For a better gaming experience, we recommend the TI-89. If you’d like a specific GameBoy game installed, feel free to email us with your request. Please note that not all games may be compatible, but we’ll give it a try—if it doesn’t work, we can always try another option.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="FBV4CHZGLVVEU" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+          </form>
+        </div>
+      </div>
+
+
+            <!-- Modal for TI-89 Calculator -->
+      <div id="ti89Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('ti89Modal')">&times;</span>
+          <h2>Purchase TI-89 Calculator with GB game installed</h2>
+          <p>This TI-89 has been modified to play GameBoy games, offering a much better gameplay experience than the TI-84. The screen quality is great, allowing you to read all the text clearly, and you can even save your progress! Pokémon Red is installed, but feel free to email us with any requests for other games you'd like installed.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="X4PKJTYF9WRP2" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+          </form>
+        </div>
+      </div>
+
+
+
+      <!-- Modal for Clay Figure -->
+      <div id="clayModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('clayModal')">&times;</span>
+          <h2>Purchase Handmade Clay Figure</h2>
+          <p>We create unique, handcrafted figures from air-dry clay, carefully sculpting each one before adding vibrant hand-painted details. Email us to let us know which figure you'd like—while we specialize in gnomes, we're happy to accommodate custom requests!</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="T97Y2D48CTJM8" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+          </form>
+        </div>
+      </div>
+
+
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+              <li><a href="https://www.instagram.com/cassettetapeperplexity/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="mailto:lofiperplexity@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+              <li><a href="https://www.youtube.com/@cassettetapeperplexity" class="icon brands style2 fa-youtube"><span class="label">YouTube</span></a></li>
+              <li><a href="https://open.spotify.com/artist/3RGCjdaGrijo3K8CmSciuc" class="icon brands style2 fa-spotify"><span class="label">Spotify</span></a></li>
+              <li><a href="https://soundcloud.app.goo.gl/Km7HwUBzSwa1BYfw5" class="icon brands style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+              <li><a href="https://music.apple.com/us/artist/lo-fidelity-cassette-tape-perplexity-and-the-boys/1554085689" class="icon brands style2 fa-apple"><span class="label">Apple Music</span></a></li>
+              <li><a href="https://lofidelitycassettetapeperplexityandtheboys.bandcamp.com/" class="icon brands style2 fa-bandcamp"><span class="label">Bandcamp</span></a></li>
+              <li><a href="https://lofiperplexity.itch.io/" class="icon brands style2 fa-itch-io"><span class="label">Itch.io</span></a></li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>&copy; Lo Fidelity Cassette Tape Perplexity and the Boys</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+
+      // Close the modal if the user clicks anywhere outside of the modal
+      window.onclick = function(event) {
+        if (event.target.classList.contains("modal")) {
+          event.target.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
