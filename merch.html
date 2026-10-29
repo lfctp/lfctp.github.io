@@ -106,10 +106,12 @@
       }
 
       .merch-item img, .donation-image {
+        display: block;
         width: 100%;
+        aspect-ratio: 1 / 1;
         height: auto;
         border-radius: 10px;
-        object-fit: cover; /* Keep image aspect ratio */
+        object-fit: contain; /* Keep the full product visible in a consistent square thumbnail */
       }
     </style>
   </head>
@@ -396,14 +398,9 @@
 
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const paypalContainer = document.querySelector("#paypal-container-ZGNMM8Q9FTDH2");
-        if (paypalContainer && window.paypal && paypal.HostedButtons) {
-          paypal.HostedButtons({
-            hostedButtonId: "ZGNMM8Q9FTDH2"
-          }).render("#paypal-container-ZGNMM8Q9FTDH2");
-        }
-      });
+      paypal.HostedButtons({
+        hostedButtonId: "ZGNMM8Q9FTDH2",
+      }).render("#paypal-container-ZGNMM8Q9FTDH2");
     </script>
 
     <script src="assets/js/jquery.min.js"></script>
