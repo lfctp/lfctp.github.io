@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAatRNAA8udFNWuiDWb1eONwYrIixJ3Rk3_uTfOMe4D9tH-zYgJM1tGyOoe0rCsRyT_HR9SGT37O4r6rM&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
     <style>
       .pp-U8L7JFSRBSFUA {
         text-align: center;
@@ -149,7 +150,22 @@
           <div class="form-container">
             <!-- Merchandise Grid -->
             <div class="merch-items">
+              <!-- New PayPal Hosted Button Product -->
+              <div class="merch-item">
+                <img src="images/donate_image.jpg" alt="New Product" onclick="openModal('newProductModal')">
+                <p>New Product</p>
+              </div>
 
+
+
+
+
+              <!-- CCR Tape -->
+              <div class="merch-item">
+                <img src="images/ccr2.jpg" alt="Casio Clearwater 2 Tape" onclick="openModal('CCRModal')">
+                <p>Casio Clearwater 2. <strong>$10</strong></p>
+              </div>
+              
 
               <!-- GameBoy Cartridge Image -->
               <div class="merch-item">
@@ -210,6 +226,28 @@
       </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <!-- Modal for CCR2 -->
+      <div id="newProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('newProductModal')">&times;</span>
+          <h2>Purchase Your Casio Clearwater 2 Tape</h2>
+          <p>Casio Clearwater 2 on Cassette.</p>
+          <div id="paypal-container-ZGNMM8Q9FTDH2"></div>
+        </div>
+      </div>
 
       <!-- Modal for GameBoy Cartridge -->
       <div id="gameboyModal" class="modal">
@@ -361,6 +399,15 @@
         </div>
       </footer>
     </div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        paypal.HostedButtons({
+          hostedButtonId: "ZGNMM8Q9FTDH2"
+        }).render("#paypal-container-ZGNMM8Q9FTDH2");
+      });
+    </script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
