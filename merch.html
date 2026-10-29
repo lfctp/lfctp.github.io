@@ -147,6 +147,9 @@
           <h1>Merchandise</h1>
           <p>Below, you'll find our current stock of merchandise. Simply click on an image to purchase. Transactions are powered by PayPal.</p>
 
+          <div class="form-container">
+            <div class="merch-items">
+
 
 
 
@@ -231,7 +234,7 @@
       
 
       <!-- Modal for CCR2 -->
-      <div id="newProductModal" class="modal">
+      <div id="CCRModal" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('CCRModal')">&times;</span>
           <h2>Purchase Your Casio Clearwater 2 Tape</h2>
@@ -394,9 +397,12 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        paypal.HostedButtons({
-          hostedButtonId: "ZGNMM8Q9FTDH2"
-        }).render("#paypal-container-ZGNMM8Q9FTDH2");
+        const paypalContainer = document.querySelector("#paypal-container-ZGNMM8Q9FTDH2");
+        if (paypalContainer && window.paypal && paypal.HostedButtons) {
+          paypal.HostedButtons({
+            hostedButtonId: "ZGNMM8Q9FTDH2"
+          }).render("#paypal-container-ZGNMM8Q9FTDH2");
+        }
       });
     </script>
 
